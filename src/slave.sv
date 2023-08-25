@@ -30,9 +30,9 @@ logic HRESET;
 assign HRESET = ~HRESETn;
 
 logic[31:0] mem[32];
-initial $readmemh("slave_init.mem", mem);
+initial $readmemh("./mem/slave_init.mem", mem);
 
-struct{
+struct {
   logic[WIDTH-1:0] HADDR;
   logic            HSEL;
   trans_t          HTRANS;

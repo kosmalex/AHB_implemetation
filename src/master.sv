@@ -30,21 +30,21 @@ logic[2:0]       index;
 logic[WIDTH-1:0] data[8];
 logic[WIDTH-1:0] addr[8];
 trans_t          ttype[8];
+burst_t          btype[8];
 logic[WIDTH-1:0] buffer;
 
 initial $readmemh("./mem/master_data_init.mem ", data);
 initial $readmemh("./mem/master_addr_init.mem ", addr);
 initial $readmemh("./mem/master_trans_init.mem", ttype);
+initial $readmemh("./mem/master_burst_init.mem", btype);
 
 logic update_index_counter;
-
 assign update_index_counter = HREADY & ~HRESP;
 
 always_ff @(posedge HCLK) begin
   if (HRESET) begin
     HWRITE    <= 0;
     HSIZE     <= 0;
-    HBURST    <= 0;
     HPROT     <= 0;
     HMASTLOCK <= 0;
 
@@ -59,5 +59,6 @@ end
 assign HWDATA = data[index];
 assign HADDR  = addr[index];
 assign HTRANS = ttype[index];
+assign HBURST = btype[index];
 
 endmodule

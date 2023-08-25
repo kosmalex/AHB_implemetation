@@ -27,7 +27,7 @@ add wave -noupdate -group S1 -expand /tb/dut/slave_1/reg0
 add wave -noupdate -group S1 /tb/dut/slave_1/comb1
 add wave -noupdate /tb/dut/slave_1/mem
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {104 ns} 0}
+WaveRestoreCursors {{Cursor 1} {275 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -43,4 +43,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {51 ns} {219 ns}
+WaveRestoreZoom {50 ns} {442 ns}
