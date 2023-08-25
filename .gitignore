@@ -1,0 +1,7 @@
+# files
+*.bak
+transcript
+*.wlf
+
+#directories
+work/
