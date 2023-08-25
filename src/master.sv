@@ -32,9 +32,9 @@ logic[WIDTH-1:0] addr[8];
 trans_t          ttype[8];
 logic[WIDTH-1:0] buffer;
 
-initial $readmemh("master_data_init.mem ", data);
-initial $readmemh("master_addr_init.mem ", addr);
-initial $readmemh("master_trans_init.mem", ttype);
+initial $readmemh("./mem/master_data_init.mem ", data);
+initial $readmemh("./mem/master_addr_init.mem ", addr);
+initial $readmemh("./mem/master_trans_init.mem", ttype);
 
 logic update_index_counter;
 
